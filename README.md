@@ -8,24 +8,8 @@ The solution simulates a real-world retail data warehouse scenario where source 
 
 The workflow is fully orchestrated using Databricks Jobs/Workflows.
 
----
 
 # Architecture
-
-```text
-SFTP Landing Zone
-        ↓
-Bronze Layer (Raw Data)
-        ↓
-Silver Layer (Cleaned Data)
-        ↓
-Gold Layer (Business Data Warehouse)
-        ↓
-Validation & Reporting
-```
-
----
-## Architecture
 
 ![Architecture](Architecture/etl_architecture.png)
 
@@ -40,7 +24,7 @@ Validation & Reporting
 * CDC (Change Data Capture)
 * SCD Type 2
 
----
+
 
 # S3 Folder Structure
 
@@ -64,7 +48,7 @@ s3://salessprintt9/
 └── gold/
 ```
 
----
+
 
 # Source Files
 
@@ -84,7 +68,7 @@ customers_src_21042026100105.csv
 sales_transactions_src_21042026100107.csv
 ```
 
----
+
 
 # Business Requirements
 
@@ -109,7 +93,7 @@ sales_transactions_src_21042026100107.csv
 
 * Validate ETL pipeline end-to-end.
 
----
+
 
 # Medallion Architecture
 
@@ -124,7 +108,6 @@ Stores raw ingested data exactly as received from source systems.
 * bronze_stores
 * bronze_sales
 
----
 
 ## Silver Layer
 
@@ -162,7 +145,7 @@ Performs data cleansing and standardization.
 * silver_stores
 * silver_sales
 
----
+
 
 ## Gold Layer
 
@@ -185,7 +168,7 @@ Implements dimensional modeling.
 * Incremental Fact Loading
 * Derived Amount Calculation
 
----
+
 
 # SCD Type 2 Implementation
 
@@ -206,7 +189,7 @@ When customer information changes:
 * EndDate
 * IsActive
 
----
+
 
 # Incremental Load Logic
 
@@ -231,7 +214,7 @@ Incremental files added to SFTP.
 * Duplicate transactions ignored
 * Invalid records rejected
 
----
+
 
 # CDC (Change Data Capture)
 
@@ -245,7 +228,7 @@ OR
 Address <> existing Address
 ```
 
----
+
 
 # Archival Process
 
@@ -266,7 +249,7 @@ Old file moved to:
 archive/customers/customers_src_20042026100105.csv
 ```
 
----
+
 
 # Workflow Automation
 
@@ -283,7 +266,6 @@ Databricks Workflow was used to automate the ETL pipeline.
 → 06_validation_testing
 ```
 
----
 
 # ETL Testing Scope
 
@@ -374,7 +356,7 @@ WHERE CustomerID IN (
 );
 ```
 
----
+
 
 # Key Features
 
