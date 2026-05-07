@@ -25,6 +25,9 @@ Validation & Reporting
 ```
 
 ---
+## Architecture
+
+![Architecture](Architecture/etl_architecture.png)
 
 # Technologies Used
 
