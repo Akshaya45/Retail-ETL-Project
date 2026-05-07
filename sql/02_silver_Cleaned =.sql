@@ -65,17 +65,7 @@ WHERE CAST(Quantity AS INT) > 0;
 -- COMMAND ----------
 
 -- MAGIC %md
--- MAGIC -----------------VALIDATION---------
-
--- COMMAND ----------
-
--- MAGIC %md
--- MAGIC VALIDATE CUSTOMER TABLE
-
--- COMMAND ----------
-
--- MAGIC %md
--- MAGIC now , lets validate silver stage 
+-- MAGIC TRANSFORMATION AND DATA QUALITY VALIDATION
 
 -- COMMAND ----------
 
